@@ -1,0 +1,109 @@
+:root {
+  @import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  a {
+    color: var(--col-main-dark);
+  }
+
+  // font styles
+  --font-title-reg: "Montserrat", sans-serif;
+  --font-title-caps: "Poppins", sans-serif;
+  --font-body-reg: "Crimson Text", serif;
+  //   color palette
+  --col-main-dark: #1b435f;
+  --col-main-light: #ffc857;
+  --col-sec-dark: #481d24;
+  --col-sec-light: #e9724c;
+  --col-utility: #c5283d;
+
+  // utility classes
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .align {
+    align-items: center;
+  }
+
+  .justify {
+    justify-content: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+// General Styling
+body {
+  h1 {
+    font-family: var(--font-title-reg);
+  }
+
+  ul {
+    font-family: var(--font-title-caps);
+  }
+  header {
+    padding: 2rem;
+    color: var(--col-main-dark);
+    .brand-logo {
+      i {
+        font-size: 2rem;
+        margin: 0rem 0.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    nav {
+      justify-content: space-around;
+      ul {
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        li {
+          font-size: 1.25rem;
+          margin: 0rem 1rem;
+          font-weight: 560;
+        }
+      }
+    }
+
+    section.hero {
+      h2 {
+        font-family: var(--font-body-reg);
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// Desktop styling
+@media screen and (min-width: 1024px) {
+  section.hero {
+    img {
+      width: 60%;
+      object-fit: cover;
+    }
+  }
+}
