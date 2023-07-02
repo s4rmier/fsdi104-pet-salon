@@ -1,6 +1,4 @@
-:root {
-  @import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-}
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   margin: 0;
@@ -8,15 +6,18 @@
   list-style-type: none;
   box-sizing: border-box;
   text-decoration: none;
+  line-height: 1.125;
 
   a {
     color: var(--col-main-dark);
   }
 
   // font styles
-  --font-title-reg: "Montserrat", sans-serif;
-  --font-title-caps: "Poppins", sans-serif;
-  --font-body-reg: "Crimson Text", serif;
+  --font-title-reg: "Montserrat";
+  --font-title-caps: "Poppins";
+  --font-body-reg: "Crimson Text";
+  --font-utility: ;
+  --font-condensed: "Bebas Neue";
   //   color palette
   --col-main-dark: #1b435f;
   --col-main-light: #ffc857;
@@ -52,6 +53,8 @@
     width: 90%;
     margin: 0 auto;
   }
+
+  color: var(--col-main-dark);
 }
 
 // General Styling
@@ -60,11 +63,40 @@ body {
     font-family: var(--font-title-reg);
   }
 
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
   ul {
     font-family: var(--font-title-caps);
   }
+
+  p {
+    font-family: var(--font-body-reg);
+    font-size: 1.5rem;
+  }
+
+  button.button {
+    cursor: pointer;
+    margin: 2rem auto;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--col-main-light);
+    text-transform: uppercase;
+    i {
+      margin: 0.25rem 0.25rem;
+    }
+    font-size: 1rem;
+    font-family: var(--font-title-caps);
+    font-weight: 500;
+    border: none;
+  }
+
+  // Global styles
   header {
-    padding: 2rem;
     color: var(--col-main-dark);
     .brand-logo {
       i {
@@ -77,6 +109,7 @@ body {
     }
 
     nav {
+      padding: 2rem;
       justify-content: space-around;
       ul {
         text-transform: uppercase;
@@ -84,7 +117,7 @@ body {
         li {
           font-size: 1.25rem;
           margin: 0rem 1rem;
-          font-weight: 560;
+          font-weight: 550;
         }
       }
     }
@@ -92,7 +125,194 @@ body {
     section.hero {
       h2 {
         font-family: var(--font-body-reg);
+        font-size: 3rem;
+        font-weight: 200;
+        span {
+          color: var(--col-sec-light);
+          font-style: italic;
+          font-weight: 600;
+        }
+      }
+    }
+
+    div.social {
+      i {
+        font-size: 1.5rem;
+        padding: 0rem 1rem;
+        color: var(--col-sec-light);
+      }
+      h3 {
+        font-size: 1.125rem;
+        font-family: var(--font-title-caps);
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        margin: 0rem 1rem;
+        color: var(--col-sec-light);
+      }
+    }
+  }
+
+  article.our-story {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    div.container {
+      h2 {
+        color: var(--col-sec-light);
         font-size: 2rem;
+        font-family: var(--font-title-reg);
+        text-align: center;
+      }
+      p {
+        margin: 1rem 0rem;
+        font-family: var(--font-body-reg);
+      }
+    }
+  }
+
+  section.what-we-do {
+    div {
+      justify-content: space-around;
+      figure {
+        width: 30%;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+        figcaption {
+          padding: 1rem;
+          margin: 1rem;
+          h3 {
+            color: var(--col-sec-light);
+            font-family: var(--font-title-reg);
+            margin: 1rem 0rem;
+          }
+          p {
+            font-family: var(--font-body-reg);
+            padding-left: 2rem;
+            border-left: 4px solid var(--col-sec-light);
+          }
+        }
+      }
+    }
+  }
+
+  section.gallery {
+    margin: 1rem 0rem 0rem;
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+      "g1 g2 g3 g4"
+      "g5 g6 g7 g8";
+    grid-template-rows: 200px 200px;
+    grid-template-columns: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .g1 {
+      grid-area: g1;
+    }
+    .g2 {
+      grid-area: g2;
+    }
+    .g3 {
+      grid-area: g3;
+    }
+    .g4 {
+      grid-area: g4;
+    }
+    .g5 {
+      grid-area: g5;
+    }
+    .g6 {
+      grid-area: g6;
+    }
+    .g7 {
+      grid-area: g7;
+    }
+    .g8 {
+      grid-area: g8;
+    }
+  }
+
+  section.register-pet {
+    width: 100%;
+    background-image: url(img/register-sec-bg.jpg);
+    background-position: center right;
+    padding: 14rem 10rem;
+    div {
+      width: 33%;
+      h2 {
+        font-family: var(--font-body-reg);
+        font-weight: 300;
+      }
+    }
+  }
+
+  footer {
+    padding: 2rem 0rem;
+    background-color: var(--col-main-dark);
+    justify-content: flex-start;
+
+    h2 {
+      margin: 1rem 0rem;
+      color: var(--col-main-light);
+      font-family: var(--font-title-caps);
+      font-size: 1.5rem;
+    }
+
+    p {
+      text-align: center;
+      color: var(--col-main-light);
+      font-size: 0.75rem;
+      font-family: var(--font-title-caps);
+      font-weight: 200;
+      line-height: 1.25;
+    }
+
+    div.container {
+      justify-content: space-between;
+      div.footer-brand {
+        margin: 0rem 1rem;
+        width: 30%;
+        i {
+          color: var(--col-main-light);
+          font-size: 4rem;
+        }
+        h1 {
+          color: var(--col-main-light);
+          font-size: 2rem;
+          margin: 0.75rem 0rem;
+        }
+      }
+
+      div.footer-info {
+        width: 30%;
+        ul {
+          li {
+            color: var(--col-main-light);
+            margin: 0.25rem 0rem;
+          }
+        }
+      }
+
+      div.footer-subscribe {
+        width: 30%;
+        margin: 0rem 1rem;
+        input {
+          padding: 0.7rem 1rem;
+          width: 60%;
+        }
+        p {
+          text-align: left;
+          margin: 1rem;
+        }
+        button.button {
+          margin: 0.5rem;
+        }
       }
     }
   }
@@ -102,7 +322,7 @@ body {
 @media screen and (min-width: 1024px) {
   section.hero {
     img {
-      width: 60%;
+      width: 66%;
       object-fit: cover;
     }
   }

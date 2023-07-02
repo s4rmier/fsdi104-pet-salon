@@ -5,32 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Petzzarria | Home</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/dog-solid.svg" type="image/x-icon" />
     <script
       src="https://kit.fontawesome.com/c7dcac8717.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <header>
-      <nav class="container flex-row align">
-        <div class="brand-logo flex-row align justify">
-          <i class="fa-solid fa-dog"></i>
-          <h1>Petzzarria</h1>
-        </div>
-        <ul class="flex-row">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-      <section class="hero container flex-row align justify">
-        <h2>
-          From pampered paws to fabulous fur, Petzzarria serves up pet
-          perfection with a stylish purr!
-        </h2>
-        <img src="img/heroimg.jpg" alt="" />
-      </section>
-    </header>
+  <body onload="init()">
+    <header></header>
+    <article class="our-story"></article>
+    <section class="flex-col container what-we-do align"></section>
+    <section class="gallery"></section>
+    <section class="register-pet flex-col justify"></section>
+    <footer class="flex-row align"></footer>
     <script src="scripts/index.js"></script>
   </body>
 </html>
