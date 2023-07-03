@@ -352,13 +352,87 @@ body {
       td {
         font-family: var(--font-title-caps);
         padding: 0.75rem 2rem;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         border: 2px solid var(--col-main-dark);
       }
 
       i {
+        font-size: 1.25rem;
         text-align: center;
         cursor: pointer;
+      }
+    }
+  }
+
+  div.registry-modal {
+    position: fixed;
+    background-color: rgba($color: #1b435f, $alpha: 0.35);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    padding: 10rem;
+    isolation: isolate;
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(4px 4px 2px var(--col-main-dark));
+    div.modal-body {
+      min-height: 100%;
+      width: 100%;
+      background-color: whitesmoke;
+      img {
+        width: 40%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      div.modal-form {
+        padding: 2rem;
+        margin: 0 auto;
+        .name-input,
+        .age-input,
+        .gender-input,
+        .services-input,
+        .breed-input {
+          margin: 0.75rem 0rem;
+        }
+
+        input,
+        select {
+          padding: 0.5rem 0.75rem;
+          width: 100%;
+          margin: 0.25rem 0rem;
+          font-family: var(--font-title-reg);
+        }
+
+        label,
+        input {
+          font-family: var(--font-title-reg);
+          margin-right: 0.5rem;
+        }
+
+        .radio-field {
+          margin-right: 2rem;
+        }
+
+        input[type="radio"] {
+          scale: 1.5;
+        }
+
+        h2 {
+          margin: 1rem 0rem;
+          font-family: var(--font-title-reg);
+          color: #1b435f;
+        }
+
+        button {
+          margin: 0.5rem;
+        }
+
+        .cancel-button {
+          background-color: rgba($color: #a0a0a0, $alpha: 0.25);
+        }
       }
     }
   }

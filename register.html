@@ -14,6 +14,70 @@
   <body id="register" onload="init()">
     <header></header>
     <main class="container flex-col"></main>
+
+    <div class="registry-modal hidden flex-col align justify">
+      <div class="modal-body flex-row">
+        <img src="img/petreg.jpg" alt="" />
+        <div class="modal-form flex-col align">
+          <h2>Pet Registration</h2>
+          <div class="flex-col">
+            <div class="name-input">
+              <label for="">Pet's Name:</label>
+              <input type="text" maxlength="30" />
+            </div>
+
+            <div class="age-input">
+              <label for="">Age</label>
+              <input type="number" />
+            </div>
+
+            <div class="flex-row gender-input align">
+              <label for="Gender"></label>
+
+              <div class="flex-row radio-field">
+                <label for="option1">Male: </label>
+                <br />
+                <input type="radio" id="option1" name="options" value="M" />
+              </div>
+
+              <div class="flex-row radio-field">
+                <label for="option2">Female: </label>
+                <br />
+                <input type="radio" id="option2" name="options" value="F" />
+              </div>
+            </div>
+
+            <div class="services-input">
+              <label for="options">Service Type:</label>
+              <select id="options" name="options">
+                <option value="Grooming">Grooming</option>
+                <option value="Nail Trimming">Nail Trimming</option>
+                <option value="Vaccination">Vaccination</option>
+                <option value="Hairdressing">Hairdressing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="breed-input">
+              <label for="">Breed: </label>
+              <input type="text" maxlength="20" />
+            </div>
+
+            <div class="flex-row">
+              <div class="buttons-input">
+                <button class="button cancel-button">
+                  <i class="fa-solid fa-user-minus"></i>Cancel
+                </button>
+                <button class="button">
+                  <i class="fa-solid fa-user-plus"></i> Register
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="flex-row align"></footer>
     <script src="scripts/register.js"></script>
   </body>
