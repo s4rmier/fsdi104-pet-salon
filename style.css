@@ -293,7 +293,7 @@ body footer div.container div.footer-subscribe button.button {
 }
 #register main table {
   width: 100%;
-  margin: 1rem auto;
+  margin: 1rem auto 4rem;
   border-collapse: collapse;
 }
 #register main table th,

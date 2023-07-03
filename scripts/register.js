@@ -55,7 +55,6 @@ dogsArr.push(new Dog("Josie", "7", "F", "Nails", "Poodle"));
 dogsArr.push(new Dog("Max", "4", "M", "Haircut", "Labrador"));
 
 const registerPet = document.getElementById("register-pet"); //open registry modal
-
 registerPet.addEventListener("click", () => toggleModal(registryModal));
 
 const closeModalButton = document.querySelector(".cancel-button"); //modal cancel button
@@ -69,9 +68,20 @@ registerToTable.addEventListener("click", () => {
   const petService = document.getElementById("options").value;
   const petBreed = document.getElementById("petbreed").value;
 
-  dogsArr.push(new Dog(petName, petAge, petGender, petService, petBreed));
-  renderDogData();
-  toggleModal(registryModal);
+  if (
+    petName == "" ||
+    petGender == "" ||
+    petAge == "" ||
+    petService == "" ||
+    petBreed == ""
+  ) {
+    alert("Please fill out all fields before continuing");
+    return;
+  } else {
+    dogsArr.push(new Dog(petName, petAge, petGender, petService, petBreed));
+    renderDogData();
+    toggleModal(registryModal);
+  }
 });
 
 const renderDogData = () => {
