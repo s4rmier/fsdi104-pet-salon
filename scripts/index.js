@@ -9,10 +9,11 @@ const init = () => {
 
 const renderHeader = () => {
   const $header = (document.getElementsByTagName("header")[0].innerHTML = `
-    <nav class="container flex-row align">
-        <div class="brand-logo flex-row align justify">
-            <i class="fa-solid fa-dog"></i>
-            <h1>Petzzarria</h1>
+      <nav class="container flex-row align">
+        <div class="brand-logo">
+          <a href="index.html" class="flex-row align justify">
+          <i class="fa-solid fa-dog"></i>
+          <h1>Petzzarria</h1></a>
         </div>
         <ul class="flex-row">
             <li><a href="services.html">Services</a></li>
@@ -35,7 +36,7 @@ const renderHeader = () => {
     <section class="hero container flex-row align justify">
         <h2>
             From <span>pampered paws</span> to <span>fabulous fur</span>, Petzzarria serves up pet
-            perfection with a <span>stylish purr</span>!
+            perfection with a <span>stylish purr!</span>
         </h2>
         <img src="img/heroimg.jpg" alt="" />
     </section>
@@ -160,7 +161,7 @@ const renderFooter = () => {
   </div>
 
   <div class="footer-info flex-col align">
-        <ul id="operating-hours">
+        <ul>
           <h2>Hours of Pawperations</h2>
           <li>${businessInfo.hours[0]}</li>
           <li>${businessInfo.hours[1]}</li>

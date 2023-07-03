@@ -96,6 +96,12 @@ body header nav ul li {
   margin: 0rem 1rem;
   font-weight: 550;
 }
+body header section.hero img {
+  height: 100%;
+  width: 66%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 body header section.hero h2 {
   font-family: var(--font-body-reg);
   font-size: 3rem;
@@ -201,7 +207,9 @@ body section.gallery .g8 {
 body section.register-pet {
   width: 100%;
   background-image: url(img/register-sec-bg.jpg);
-  background-position: center right;
+  background-position: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 14rem 10rem;
 }
 body section.register-pet div {
@@ -269,10 +277,33 @@ body footer div.container div.footer-subscribe button.button {
   margin: 0.5rem;
 }
 
-@media screen and (min-width: 1024px) {
-  section.hero img {
-    width: 66%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+#register main h1 {
+  text-align: center;
+  margin: 2rem 0rem;
+}
+#register main div {
+  justify-content: space-between;
+}
+#register main div h3 {
+  font-family: var(--font-title-reg);
+  font-size: 1.25rem;
+}
+#register main div button.button {
+  margin: 0;
+}
+#register main table {
+  width: 100%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+}
+#register main table th,
+#register main table td {
+  font-family: var(--font-title-caps);
+  padding: 0.75rem 2rem;
+  font-size: 1.5rem;
+  border: 2px solid var(--col-main-dark);
+}
+#register main table i {
+  text-align: center;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
