@@ -64,23 +64,12 @@ closeModalButton.addEventListener("click", () => toggleModal(registryModal));
 const registerToTable = document.getElementById("add-to-table"); //add pet to the array/table
 registerToTable.addEventListener("click", () => {
   const petName = document.getElementById("petname").value;
-  // const petGender = () => {
-  //   const genderRadios = document.querySelectorAll(
-  //     'input[name="dog-gender"]:checked'
-  //   );
-  //   let selectedValue;
-
-  //   if (genderRadios.length > 0) {
-  //     selectedValue = genderRadios[0].value;
-  //   }
-  //   return selectedValue;
-  // }; functionality not complete yet
-
+  const petGender = document.getElementById("petgender").value;
   const petAge = document.getElementById("petage").value;
   const petService = document.getElementById("options").value;
   const petBreed = document.getElementById("petbreed").value;
 
-  dogsArr.push(new Dog(petName, petAge, "petGender", petService, petBreed));
+  dogsArr.push(new Dog(petName, petAge, petGender, petService, petBreed));
   renderDogData();
   toggleModal(registryModal);
 });
@@ -123,7 +112,7 @@ const toggleModal = (modal) => {
 
 const clearModalData = () => {
   const petName = (document.getElementById("petname").value = "");
-  const petGender = "M";
+  const petGender = (document.getElementById("petgender").value = "");
   const petAge = (document.getElementById("petage").value = "");
   const petService = (document.getElementById("options").value = "Grooming");
   const petBreed = (document.getElementById("petbreed").value = "");

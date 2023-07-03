@@ -49,20 +49,12 @@
               <input id="petage" type="number" />
             </div>
 
-            <div class="flex-row gender-input align">
-              <label for="Gender"></label>
-
-              <div class="flex-row radio-field">
-                <label for="option1">Male: </label>
-                <br />
-                <input type="radio" id="option1" name="dog-gender" value="M" />
-              </div>
-
-              <div class="flex-row radio-field">
-                <label for="option2">Female: </label>
-                <br />
-                <input type="radio" id="option2" name="dog-gender" value="F" />
-              </div>
+            <div class="flex-col gender-input">
+              <label for="petgender">Gender:</label>
+              <select id="petgender" name="petgender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
             </div>
 
             <div class="services-input">

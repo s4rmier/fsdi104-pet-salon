@@ -399,7 +399,8 @@ body {
         }
 
         input,
-        select {
+        select,
+        option {
           padding: 0.5rem 0.75rem;
           width: 100%;
           margin: 0.25rem 0rem;
@@ -410,14 +411,6 @@ body {
         input {
           font-family: var(--font-title-reg);
           margin-right: 0.5rem;
-        }
-
-        .radio-field {
-          margin-right: 2rem;
-        }
-
-        input[type="radio"] {
-          scale: 1.5;
         }
 
         h2 {

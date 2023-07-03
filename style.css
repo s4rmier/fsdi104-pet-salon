@@ -347,7 +347,8 @@ body footer div.container div.footer-subscribe button.button {
   margin: 0.75rem 0rem;
 }
 #register div.registry-modal div.modal-body div.modal-form input,
-#register div.registry-modal div.modal-body div.modal-form select {
+#register div.registry-modal div.modal-body div.modal-form select,
+#register div.registry-modal div.modal-body div.modal-form option {
   padding: 0.5rem 0.75rem;
   width: 100%;
   margin: 0.25rem 0rem;
@@ -357,12 +358,6 @@ body footer div.container div.footer-subscribe button.button {
 #register div.registry-modal div.modal-body div.modal-form input {
   font-family: var(--font-title-reg);
   margin-right: 0.5rem;
-}
-#register div.registry-modal div.modal-body div.modal-form .radio-field {
-  margin-right: 2rem;
-}
-#register div.registry-modal div.modal-body div.modal-form input[type=radio] {
-  scale: 1.5;
 }
 #register div.registry-modal div.modal-body div.modal-form h2 {
   margin: 1rem 0rem;
