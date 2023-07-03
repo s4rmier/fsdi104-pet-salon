@@ -1,7 +1,7 @@
 const init = () => {
   renderHeader();
+  renderDogData();
   renderFooter();
-  renderTable();
 };
 
 const renderHeader = () => {
@@ -39,51 +39,52 @@ const renderHeader = () => {
   `);
 };
 
-const renderTable = () => {
-  class Dog {
-    constructor(name, age, gender, service, breed) {
-      this.name = name;
-      this.age = age;
-      this.gender = gender;
-      this.service = service;
-      this.breed = breed;
-    }
+class Dog {
+  constructor(name, age, gender, service, breed) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.service = service;
+    this.breed = breed;
   }
+}
 
-  const dogsArr = [];
-  dogsArr.push(new Dog("Ernie", "3", "M", "Grooming", "Husky"));
-  dogsArr.push(new Dog("Josie", "7", "F", "Nails", "Poodle"));
-  dogsArr.push(new Dog("Max", "4", "M", "Haircut", "Labrador"));
-  dogsArr.push(new Dog("Luna", "2", "F", "Haircut", "German Shepherd"));
-  dogsArr.push(new Dog("Rocky", "5", "M", "Grooming", "Bulldog"));
-  dogsArr.push(new Dog("Bella", "3", "F", "Nails", "Golden Retriever"));
-  dogsArr.push(new Dog("Charlie", "6", "M", "Nails", "Dachshund"));
-  dogsArr.push(new Dog("Lucy", "1", "F", "Grooming", "Beagle"));
-  dogsArr.push(new Dog("Cooper", "8", "M", "Vaccine", "Siberian Husky"));
-  dogsArr.push(new Dog("Molly", "9", "F", "Vaccine", "Boxer"));
+const dogsArr = [];
+dogsArr.push(new Dog("Ernie", "3", "M", "Grooming", "Husky"));
+dogsArr.push(new Dog("Josie", "7", "F", "Nails", "Poodle"));
+dogsArr.push(new Dog("Max", "4", "M", "Haircut", "Labrador"));
 
-  const $mainTbale = (document.getElementsByTagName(
-    "main"
-  )[0].innerHTML = `<h1>Pet Registry</h1>
-  <div class="table-info flex-row align">
-    <h3>Registry Count: ${dogsArr.length}</h3>
-    <button id="register-pet" class="button">
-      <i class="fa-solid fa-user-plus"></i> Register
-    </button>
-  </div>
-  <table id="pet-registry">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Service</th>
-      <th>Breed</th>
-      <th></th>
-    </tr>
-  </table>
-  `);
+const registerPet = document.getElementById("register-pet"); //open registry modal
 
+registerPet.addEventListener("click", () => toggleModal(registryModal));
+
+const closeModalButton = document.querySelector(".cancel-button"); //modal cancel button
+closeModalButton.addEventListener("click", () => toggleModal(registryModal));
+
+const registerToTable = document.getElementById("add-to-table"); //add pet to the array/table
+registerToTable.addEventListener("click", () => {
+  const petName = document.getElementById("petname").value;
+  const petGender = "M";
+  const petAge = document.getElementById("petage").value;
+  const petService = document.getElementById("options").value;
+  const petBreed = document.getElementById("petbreed").value;
+
+  dogsArr.push(new Dog(petName, petAge, petGender, petService, petBreed));
+  renderDogData();
+  toggleModal(registryModal);
+});
+
+const renderDogData = () => {
   const $petTable = document.getElementsByTagName("table")[0];
+
+  $petTable.innerHTML = `<tr>
+  <th>Name</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Service</th>
+  <th>Breed</th>
+  <th></th>
+    </tr>`;
 
   dogsArr.forEach((dog) => {
     $petTable.innerHTML += `
@@ -96,24 +97,25 @@ const renderTable = () => {
     <td class="dog-remove"><i class="fa-solid fa-trash-can"></i></td>
   </tr>
   `;
-    const removeDog = document.querySelectorAll(".dog-remove");
-    removeDog.forEach((element) => {
-      // remove an element from the array corresponding to the button clicked
-    });
   });
 
-  const registerPet = document.getElementById("register-pet");
-  const registryModal = document.querySelector(".registry-modal");
+  const registryCount = (document.getElementById("regcount").innerText =
+    dogsArr.length);
+};
 
-  registerPet.addEventListener("click", () => {
-    toggleModal(registryModal);
-  });
+const registryModal = document.querySelector(".registry-modal");
 
-  const closeModalButton = document.querySelector(".cancel-button");
+const toggleModal = (modal) => {
+  modal.classList.toggle("hidden");
+  clearModalData();
+};
 
-  closeModalButton.addEventListener("click", () => {
-    toggleModal(registryModal);
-  });
+const clearModalData = () => {
+  const petName = (document.getElementById("petname").value = "");
+  const petGender = "M";
+  const petAge = (document.getElementById("petage").value = "");
+  const petService = (document.getElementById("options").value = "Grooming");
+  const petBreed = (document.getElementById("petbreed").value = "");
 };
 
 const renderFooter = () => {
@@ -169,8 +171,4 @@ const renderFooter = () => {
 
   const $subButton = document.getElementById("sub-newsletter");
   $subButton.addEventListener("click", () => alert("Subscribed! Paws bump~"));
-};
-
-const toggleModal = (modal) => {
-  modal.classList.toggle("hidden");
 };

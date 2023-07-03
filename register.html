@@ -13,7 +13,25 @@
   </head>
   <body id="register" onload="init()">
     <header></header>
-    <main class="container flex-col"></main>
+    <main class="container flex-col">
+      <h1>Pet Registry</h1>
+      <div class="table-info flex-row align">
+        <h3>Registry Count: <span id="regcount"></span></h3>
+        <button id="register-pet" class="button">
+          <i class="fa-solid fa-user-plus"></i> Register
+        </button>
+      </div>
+      <table id="pet-registry">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Service</th>
+          <th>Breed</th>
+          <th></th>
+        </tr>
+      </table>
+    </main>
 
     <div class="registry-modal hidden flex-col align justify">
       <div class="modal-body flex-row">
@@ -23,12 +41,12 @@
           <div class="flex-col">
             <div class="name-input">
               <label for="">Pet's Name:</label>
-              <input type="text" maxlength="30" />
+              <input id="petname" type="text" maxlength="30" />
             </div>
 
             <div class="age-input">
               <label for="">Age</label>
-              <input type="number" />
+              <input id="petage" type="number" />
             </div>
 
             <div class="flex-row gender-input align">
@@ -60,7 +78,7 @@
 
             <div class="breed-input">
               <label for="">Breed: </label>
-              <input type="text" maxlength="20" />
+              <input id="petbreed" type="text" maxlength="20" />
             </div>
 
             <div class="flex-row">
@@ -68,7 +86,7 @@
                 <button class="button cancel-button">
                   <i class="fa-solid fa-user-minus"></i>Cancel
                 </button>
-                <button class="button">
+                <button id="add-to-table" class="button">
                   <i class="fa-solid fa-user-plus"></i> Register
                 </button>
               </div>

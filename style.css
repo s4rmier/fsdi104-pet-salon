@@ -324,7 +324,6 @@ body footer div.container div.footer-subscribe button.button {
   filter: drop-shadow(4px 4px 2px var(--col-main-dark));
 }
 #register div.registry-modal div.modal-body {
-  min-height: 100%;
   width: 100%;
   background-color: whitesmoke;
 }
