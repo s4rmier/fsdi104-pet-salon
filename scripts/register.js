@@ -62,6 +62,7 @@ closeModalButton.addEventListener("click", () => toggleModal(registryModal));
 
 const registerToTable = document.getElementById("add-to-table"); //add pet to the array/table
 registerToTable.addEventListener("click", () => {
+  clearInputStyling();
   const petName = document.getElementById("petname");
   const petGender = document.getElementById("petgender");
   const petAge = document.getElementById("petage");
