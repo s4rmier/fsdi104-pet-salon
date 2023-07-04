@@ -59,6 +59,9 @@ body p {
   font-family: var(--font-body-reg);
   font-size: 1.5rem;
 }
+body .error {
+  border: 2px solid var(--col-utility);
+}
 body button.button {
   cursor: pointer;
   margin: 2rem auto;

@@ -62,23 +62,45 @@ closeModalButton.addEventListener("click", () => toggleModal(registryModal));
 
 const registerToTable = document.getElementById("add-to-table"); //add pet to the array/table
 registerToTable.addEventListener("click", () => {
-  const petName = document.getElementById("petname").value;
-  const petGender = document.getElementById("petgender").value;
-  const petAge = document.getElementById("petage").value;
-  const petService = document.getElementById("options").value;
-  const petBreed = document.getElementById("petbreed").value;
+  const petName = document.getElementById("petname");
+  const petGender = document.getElementById("petgender");
+  const petAge = document.getElementById("petage");
+  const petService = document.getElementById("options");
+  const petBreed = document.getElementById("petbreed");
 
   if (
-    petName == "" ||
-    petGender == "" ||
-    petAge == "" ||
-    petService == "" ||
-    petBreed == ""
+    petName.value == "" ||
+    petGender.value == "" ||
+    petAge.value == "" ||
+    petService.value == "" ||
+    petBreed.value == ""
   ) {
+    if (petName.value == "") {
+      petName.classList.add("error");
+    }
+    if (petGender.value == "") {
+      petGender.classList.add("error");
+    }
+    if (petAge.value == "") {
+      petAge.classList.add("error");
+    }
+    if (petService.value == "") {
+      petService.classList.add("error");
+    }
+    if (petBreed.value == "") {
+      petBreed.classList.add("error");
+    }
     alert("Please fill out all fields before continuing");
-    return;
   } else {
-    dogsArr.push(new Dog(petName, petAge, petGender, petService, petBreed));
+    dogsArr.push(
+      new Dog(
+        petName.value,
+        petAge.value,
+        petGender.value,
+        petService.value,
+        petBreed.value
+      )
+    );
     renderDogData();
     toggleModal(registryModal);
   }
@@ -86,7 +108,6 @@ registerToTable.addEventListener("click", () => {
 
 const renderDogData = () => {
   const $petTable = document.getElementsByTagName("table")[0];
-
   $petTable.innerHTML = `<tr>
   <th>Name</th>
   <th>Age</th>
@@ -95,7 +116,6 @@ const renderDogData = () => {
   <th>Breed</th>
   <th></th>
     </tr>`;
-
   dogsArr.forEach((dog) => {
     $petTable.innerHTML += `
   <tr>
@@ -107,6 +127,19 @@ const renderDogData = () => {
     <td class="dog-remove"><i class="fa-solid fa-trash-can"></i></td>
   </tr>
   `;
+  });
+
+  const deleteRegistrationButton = document.querySelectorAll(".dog-remove");
+  deleteRegistrationButton.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const confirmed = window.confirm(
+        "Are you sure you want to delete this registration?"
+      );
+      if (confirmed) {
+        dogsArr.splice(index, 1);
+        renderDogData();
+      }
+    });
   });
 
   const registryCount = (document.getElementById("regcount").innerText =
@@ -126,6 +159,21 @@ const clearModalData = () => {
   const petAge = (document.getElementById("petage").value = "");
   const petService = (document.getElementById("options").value = "Grooming");
   const petBreed = (document.getElementById("petbreed").value = "");
+  clearInputStyling();
+};
+
+const clearInputStyling = () => {
+  const petName = document.getElementById("petname").classList.remove("error");
+  const petGender = document
+    .getElementById("petgender")
+    .classList.remove("error");
+  const petAge = document.getElementById("petage").classList.remove("error");
+  const petService = document
+    .getElementById("options")
+    .classList.remove("error");
+  const petBreed = document
+    .getElementById("petbreed")
+    .classList.remove("error");
 };
 
 const renderFooter = () => {
@@ -171,7 +219,7 @@ const renderFooter = () => {
       perks!"
     </p>
     <div class="flex-row align">
-      <input type="text" placeholder="Enter Your E-Mail" maxlength="20" />
+      <input class="email-input" type="text" placeholder="Enter Your E-Mail" maxlength="20" />
       <button class="button" id="sub-newsletter">
         <i class="fa-solid fa-paw"></i>Submit
       </button>
@@ -180,5 +228,14 @@ const renderFooter = () => {
 </div>`);
 
   const $subButton = document.getElementById("sub-newsletter");
-  $subButton.addEventListener("click", () => alert("Subscribed! Paws bump~"));
+
+  $subButton.addEventListener("click", () => {
+    const emailInput = document.querySelector(".email-input").value;
+
+    if (emailInput === "") {
+      alert("Please enter a valid e-mail address");
+    } else {
+      alert("Subscribed! Paws-bump!");
+    }
+  });
 };

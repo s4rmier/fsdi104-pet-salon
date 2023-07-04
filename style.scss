@@ -80,6 +80,10 @@ body {
     font-size: 1.5rem;
   }
 
+  .error {
+    border: 2px solid var(--col-utility);
+  }
+
   button.button {
     cursor: pointer;
     margin: 2rem auto;

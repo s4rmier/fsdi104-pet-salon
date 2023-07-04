@@ -129,7 +129,7 @@ const renderRegisterPet = () => {
     Ready to embark on a pet-tacular adventure? Register your furball
     today, and we'll sprinkle magic and cuddles while handling the rest!
   </h2>
-  <a href="services.html"
+  <a href="register.html"
     ><button class="button">
       <i class="fa-solid fa-paw"></i>registration
     </button></a
@@ -181,7 +181,7 @@ const renderFooter = () => {
       perks!"
     </p>
     <div class="flex-row align">
-      <input type="text" placeholder="Enter Your E-Mail" maxlength="20" />
+      <input class="email-input" type="text" placeholder="Enter Your E-Mail" maxlength="20" />
       <button class="button" id="sub-newsletter">
         <i class="fa-solid fa-paw"></i>Submit
       </button>
@@ -191,5 +191,14 @@ const renderFooter = () => {
   `);
 
   const $subButton = document.getElementById("sub-newsletter");
-  $subButton.addEventListener("click", () => alert("Subscribed! Paws bump~"));
+
+  $subButton.addEventListener("click", () => {
+    const emailInput = document.querySelector(".email-input").value;
+
+    if (emailInput === "") {
+      alert("Please enter a valid e-mail address");
+    } else {
+      alert("Subscribed! Paws-bump!");
+    }
+  });
 };
