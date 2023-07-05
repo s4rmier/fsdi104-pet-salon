@@ -40,6 +40,7 @@
 }
 * .container {
   width: 90%;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -58,6 +59,23 @@ body ul {
 body p {
   font-family: var(--font-body-reg);
   font-size: 1.5rem;
+}
+body table {
+  width: 100%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+}
+body table th,
+body table td {
+  font-family: var(--font-title-caps);
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border: 2px solid var(--col-main-dark);
+}
+body table i {
+  font-size: 1.25rem;
+  text-align: center;
+  cursor: pointer;
 }
 body .error {
   border: 2px solid var(--col-utility);
@@ -165,7 +183,7 @@ body section.what-we-do div figure figcaption h3 {
 body section.what-we-do div figure figcaption p {
   font-family: var(--font-body-reg);
   padding-left: 2rem;
-  border-left: 4px solid var(--col-sec-light);
+  border-left: 2px solid var(--col-sec-light);
 }
 body section.gallery {
   margin: 1rem 0rem 0rem;
@@ -223,6 +241,7 @@ body section.register-pet div h2 {
   font-weight: 300;
 }
 body footer {
+  margin: 2rem 0rem 0rem;
   padding: 2rem 0rem;
   background-color: var(--col-main-dark);
   justify-content: flex-start;
@@ -293,23 +312,6 @@ body footer div.container div.footer-subscribe button.button {
 }
 #register main div button.button {
   margin: 0;
-}
-#register main table {
-  width: 100%;
-  margin: 1rem auto 4rem;
-  border-collapse: collapse;
-}
-#register main table th,
-#register main table td {
-  font-family: var(--font-title-caps);
-  padding: 0.75rem 2rem;
-  font-size: 1.25rem;
-  border: 2px solid var(--col-main-dark);
-}
-#register main table i {
-  font-size: 1.25rem;
-  text-align: center;
-  cursor: pointer;
 }
 #register div.registry-modal {
   position: fixed;
