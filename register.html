@@ -28,6 +28,8 @@
           <th>Gender</th>
           <th>Service</th>
           <th>Breed</th>
+          <th>Contact</th>
+          <th>Method</th>
           <th></th>
         </tr>
       </table>
@@ -44,17 +46,19 @@
               <input id="petname" type="text" maxlength="30" />
             </div>
 
-            <div class="age-input">
-              <label for="">Age</label>
-              <input id="petage" type="number" />
-            </div>
+            <div class="flex-row align">
+              <div class="age-input flex-row align">
+                <label for="">Age: </label>
+                <input id="petage" type="number" maxlength="2" />
+              </div>
 
-            <div class="flex-col gender-input">
-              <label for="petgender">Gender:</label>
-              <select id="petgender" name="petgender">
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-              </select>
+              <div class="flex-row gender-input align">
+                <label for="petgender">Gender:</label>
+                <select id="petgender" name="petgender">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select>
+              </div>
             </div>
 
             <div class="services-input">
@@ -68,9 +72,23 @@
               </select>
             </div>
 
-            <div class="breed-input">
+            <div class="breed-input flex-row align justify">
               <label for="">Breed: </label>
               <input id="petbreed" type="text" maxlength="20" />
+            </div>
+
+            <div class="contact-number flex-row align justify">
+              <label for="">Contact: </label>
+              <input id="contactinfo" type="number" maxlength="10" />
+            </div>
+
+            <div class="services-input">
+              <label for="payment-method">Payment Method:</label>
+              <select id="payment-method" name="payment-method">
+                <option value="Cash">Cash/Check</option>
+                <option value="Card">Visa/Mastercard</option>
+                <option value="Paypal">Paypal/E-Money</option>
+              </select>
             </div>
 
             <div class="flex-row">

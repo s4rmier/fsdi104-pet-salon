@@ -40,19 +40,27 @@ const renderHeader = () => {
 };
 
 class Dog {
-  constructor(name, age, gender, service, breed) {
+  constructor(name, age, gender, service, breed, contact, method) {
     this.name = name;
     this.age = age;
     this.gender = gender;
     this.service = service;
     this.breed = breed;
+    this.contact = contact;
+    this.method = method;
   }
 }
 
 const dogsArr = [];
-dogsArr.push(new Dog("Ernie", "3", "M", "Grooming", "Husky"));
-dogsArr.push(new Dog("Josie", "7", "F", "Nails", "Poodle"));
-dogsArr.push(new Dog("Max", "4", "M", "Haircut", "Labrador"));
+dogsArr.push(
+  new Dog("Ernie", "3", "M", "Grooming", "Husky", "619-555-4444", "Cash")
+);
+dogsArr.push(
+  new Dog("Josie", "7", "F", "Nails", "Poodle", "619-323-5231", "Cash")
+);
+dogsArr.push(
+  new Dog("Max", "4", "M", "Haircut", "Labrador", "619-123-0002", "Cash")
+);
 
 const registerPet = document.getElementById("register-pet"); //open registry modal
 registerPet.addEventListener("click", () => toggleModal(registryModal));
@@ -68,13 +76,17 @@ registerToTable.addEventListener("click", () => {
   const petAge = document.getElementById("petage");
   const petService = document.getElementById("options");
   const petBreed = document.getElementById("petbreed");
+  const contactInfo = document.getElementById("contactinfo");
+  const paymentMethod = document.getElementById("payment-method");
 
   if (
     petName.value == "" ||
     petGender.value == "" ||
     petAge.value == "" ||
     petService.value == "" ||
-    petBreed.value == ""
+    petBreed.value == "" ||
+    contactInfo.value == "" ||
+    paymentMethod.value == ""
   ) {
     if (petName.value == "") {
       petName.classList.add("error");
@@ -91,6 +103,12 @@ registerToTable.addEventListener("click", () => {
     if (petBreed.value == "") {
       petBreed.classList.add("error");
     }
+    if (contactInfo.value == "") {
+      contactInfo.classList.add("error");
+    }
+    if (paymentMethod.value == "") {
+      paymentMethod.classList.add("error");
+    }
     alert("Please fill out all fields before continuing");
   } else {
     dogsArr.push(
@@ -99,7 +117,9 @@ registerToTable.addEventListener("click", () => {
         petAge.value,
         petGender.value,
         petService.value,
-        petBreed.value
+        petBreed.value,
+        contactInfo.value,
+        paymentMethod.value
       )
     );
     renderDogData();
@@ -115,6 +135,8 @@ const renderDogData = () => {
   <th>Gender</th>
   <th>Service</th>
   <th>Breed</th>
+  <th>Contact</th>
+  <th>Method</th>
   <th></th>
     </tr>`;
   dogsArr.forEach((dog) => {
@@ -125,6 +147,8 @@ const renderDogData = () => {
     <td>${dog.gender}</td>
     <td>${dog.service}</td>
     <td>${dog.breed}</td>
+    <td>${dog.contact}</td>
+    <td>${dog.method}</td>
     <td class="dog-remove"><i class="fa-solid fa-trash-can"></i></td>
   </tr>
   `;
@@ -160,6 +184,8 @@ const clearModalData = () => {
   const petAge = (document.getElementById("petage").value = "");
   const petService = (document.getElementById("options").value = "Grooming");
   const petBreed = (document.getElementById("petbreed").value = "");
+  const contactInfo = (document.getElementById("contactinfo").value = "");
+  const paymentMethod = (document.getElementById("payment-method").value = "");
   clearInputStyling();
 };
 
@@ -174,6 +200,12 @@ const clearInputStyling = () => {
     .classList.remove("error");
   const petBreed = document
     .getElementById("petbreed")
+    .classList.remove("error");
+  const contactInfo = document
+    .getElementById("contactinfo")
+    .classList.remove("error");
+  const paymentMethod = document
+    .getElementById("payment-method")
     .classList.remove("error");
 };
 

@@ -359,7 +359,7 @@ body footer div.container div.footer-subscribe button.button {
 #register div.registry-modal div.modal-body div.modal-form option {
   padding: 0.5rem 0.75rem;
   width: 100%;
-  margin: 0.25rem 0rem;
+  margin: 0.75rem 0rem;
   font-family: var(--font-title-reg);
 }
 #register div.registry-modal div.modal-body div.modal-form label,
@@ -374,6 +374,12 @@ body footer div.container div.footer-subscribe button.button {
 }
 #register div.registry-modal div.modal-body div.modal-form button {
   margin: 0.5rem;
+}
+#register div.registry-modal div.modal-body div.modal-form div.age-input input {
+  width: 60%;
+}
+#register div.registry-modal div.modal-body div.modal-form div.breed-input input {
+  width: 100%;
 }
 #register div.registry-modal div.modal-body div.modal-form .cancel-button {
   background-color: rgba(160, 160, 160, 0.25);

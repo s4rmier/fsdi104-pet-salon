@@ -409,7 +409,7 @@ body {
         option {
           padding: 0.5rem 0.75rem;
           width: 100%;
-          margin: 0.25rem 0rem;
+          margin: 0.75rem 0rem;
           font-family: var(--font-title-reg);
         }
 
@@ -427,6 +427,18 @@ body {
 
         button {
           margin: 0.5rem;
+        }
+
+        div.age-input {
+          input {
+            width: 60%;
+          }
+        }
+
+        div.breed-input {
+          input {
+            width: 100%;
+          }
         }
 
         .cancel-button {
