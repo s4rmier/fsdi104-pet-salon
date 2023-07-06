@@ -435,3 +435,54 @@ body {
     }
   }
 }
+
+#about {
+  section.hero {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    h2 {
+      font-family: var(--font-body-reg);
+      font-size: 3rem;
+      font-weight: 200;
+      span {
+        color: var(--col-sec-light);
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+  }
+
+  main {
+    background-image: url(img/paws.svg);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: contain;
+    div.container {
+      figure {
+        width: 70%;
+        img {
+          width: 50%;
+        }
+        figcaption {
+          margin: 0rem 1rem;
+          h2 {
+            font-family: var(--font-title-reg);
+            font-size: 1.75rem;
+          }
+          p {
+            margin: 1rem 0rem;
+            font-family: var(--font-body-reg);
+          }
+        }
+      }
+
+      figure:nth-child(2) {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

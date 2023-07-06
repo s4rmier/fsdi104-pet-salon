@@ -1,7 +1,7 @@
 const init = () => {
   renderHeader();
   renderArticle();
-  renderTable();
+  renderMain();
   renderFooter();
 };
 
@@ -31,90 +31,59 @@ const renderHeader = () => {
               <a href="18006462023"><h3>1(800)PET-2023</h3></a>
         </div>
       </nav>
-      <section class="hero container flex-row align justify">
-          <h2>
-            "<span>Enchanting</span> salon transforms pets into <span>fashionistas.</span> Beg for more as we <span>sprinkle magic</span> on their furry journey!"
-          </h2>
-          <img src="img/serviceshero.png" alt="" />
-      </section>
+  
     `);
 };
 
 const renderArticle = () => {
   const $article = (document.getElementsByTagName("article")[0].innerHTML = `
   <div class="container">
-  <h2>Our Services</h2>
+  <h2>About Us</h2>
   <p>
-    Pamper your beloved pets with expert grooming, luxurious spa treatments, and stylish makeovers at our premium pet salon. Our skilled team provides personalized care, including nail trims, soothing massages, gentle bathing, and breed-specific haircuts. We prioritize your pet's comfort and well-being.
+    Welcome to Petzzarria, the ultimate destination where we transform your fur babies into fashion-forward trendsetters, showering them with love, stylish makeovers, and belly rubs that could outpace a turbocharged pizza delivery scooter.
   </p>
   </div>
   `);
 };
 
-const renderTable = () => {
-  const $table = (document.getElementsByTagName("table")[0].innerHTML = `
-  <tr>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>Bath and Brush</td>
-    <td>
-    Give your pet a refreshing cleanse and gentle brush to keep their coat
-    clean and shiny.
-   </td>
-    <td>$50</td>
-  </tr>
-  <tr>
-    <td>Haircut and Styling</td>
-    <td>
-      Transform your pet's look with a professional haircut and stylish
-      grooming tailored to their breed or your preferences.
-    </td>
-    <td>$80</td>
-  </tr>
-  <tr>
-    <td>Nail Trimming</td>
-    <td>
-      Ensure your pet's nails are neatly trimmed for their comfort and to
-      maintain their paw health.
-    </td>
-    <td>$20</td>
-  </tr>
-  <tr>
-    <td>Ear Cleaning</td>
-    <td>
-      Keep your pet's ears clean and free from wax buildup to prevent
-      discomfort and potential infections.
-    </td>
-    <td>$15</td>
-  </tr>
-  <tr>
-    <td>Teeth Brushing</td>
-    <td>
-      Promote good oral hygiene by having your pet's teeth brushed regularly
-      to prevent dental issues and maintain fresh breath.
-    </td>
-    <td>$20</td>
-  </tr>
-  <tr>
-    <td>Flea and Tick Treatment</td>
-    <td>
-      Safeguard your pet against pesky fleas and ticks with a thorough
-      treatment to keep them itch-free and protected.
-    </td>
-    <td>$40</td>
-  </tr>
-  <tr>
-    <td>De-Shedding Treatment</td>
-    <td>
-      Minimize shedding and remove loose fur from your pet's coat, helping
-      to reduce allergens in your home.
-    </td>
-    <td>$60</td>
-  </tr>
-  `);
+const renderMain = () => {
+  const $main = (document.getElementsByTagName(
+    "main"
+  )[0].innerHTML = `<div class="container flex-col justify">
+  <figure class="flex-row align justify">
+    <img src="img/about1.png" alt="" />
+    <figcaption>
+      <h2>Expert Pet Stylists:</h2>
+      <p>
+        Our highly skilled team of pet stylists are trained in the latest
+        grooming techniques, ensuring your furry friends receive top-notch
+        care and fabulous makeovers.
+      </p>
+    </figcaption>
+  </figure>
+  <figure class="flex-row align justify">
+    <img src="img/about2.png" alt="" />
+    <figcaption>
+      <h2>Love and Care:</h2>
+      <p>
+        At Petzzarria, we believe in showering your pets with love and
+        attention, creating a stress-free and comfortable environment for
+        their grooming sessions.
+      </p>
+    </figcaption>
+  </figure>
+  <figure class="flex-row align justify">
+    <img src="img/about3.png" alt="" />
+    <figcaption>
+      <h2>Tailored Services:</h2>
+      <p>
+        We understand that every pet is unique, which is why we offer
+        personalized grooming packages that cater to the specific needs
+        and preferences of your beloved companions.
+      </p>
+    </figcaption>
+  </figure>
+</div>`);
 };
 
 const renderFooter = () => {

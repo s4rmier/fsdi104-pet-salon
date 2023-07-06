@@ -374,4 +374,48 @@ body footer div.container div.footer-subscribe button.button {
 }
 #register div.registry-modal div.modal-body div.modal-form .cancel-button {
   background-color: rgba(160, 160, 160, 0.25);
+}
+
+#about section.hero img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#about section.hero h2 {
+  font-family: var(--font-body-reg);
+  font-size: 3rem;
+  font-weight: 200;
+}
+#about section.hero h2 span {
+  color: var(--col-sec-light);
+  font-style: italic;
+  font-weight: 600;
+}
+#about main {
+  background-image: url(img/paws.svg);
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: contain;
+}
+#about main div.container figure {
+  width: 70%;
+}
+#about main div.container figure img {
+  width: 50%;
+}
+#about main div.container figure figcaption {
+  margin: 0rem 1rem;
+}
+#about main div.container figure figcaption h2 {
+  font-family: var(--font-title-reg);
+  font-size: 1.75rem;
+}
+#about main div.container figure figcaption p {
+  margin: 1rem 0rem;
+  font-family: var(--font-body-reg);
+}
+#about main div.container figure:nth-child(2) {
+  align-self: flex-end;
+  flex-direction: row-reverse;
 }/*# sourceMappingURL=style.css.map */
