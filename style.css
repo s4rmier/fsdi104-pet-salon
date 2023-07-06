@@ -60,11 +60,14 @@ body p {
   font-family: var(--font-body-reg);
   font-size: 1.5rem;
 }
+body #servicestable,
 body table {
   width: 100%;
-  margin: 1rem auto;
+  margin: 2rem auto;
   border-collapse: collapse;
 }
+body #servicestable th,
+body #servicestable td,
 body table th,
 body table td {
   font-family: var(--font-title-caps);
@@ -72,6 +75,7 @@ body table td {
   font-size: 1.25rem;
   border: 2px solid var(--col-main-dark);
 }
+body #servicestable i,
 body table i {
   font-size: 1.25rem;
   text-align: center;
@@ -241,7 +245,6 @@ body section.register-pet div h2 {
   font-weight: 300;
 }
 body footer {
-  margin: 2rem 0rem 0rem;
   padding: 2rem 0rem;
   background-color: var(--col-main-dark);
   justify-content: flex-start;
